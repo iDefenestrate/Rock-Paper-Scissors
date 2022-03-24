@@ -15,35 +15,40 @@ const playerSelection = playerPrompt.toLocaleLowerCase();
 // Function for One Round of Play
 function playRound (playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "paper") {
-        alert("You lose. Paper beats Rock.");
+        return("You lose. Paper beats Rock.");
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        alert("You win. Rock beats Scissors.");
+        return("You win. Rock beats Scissors.");
     }
     else if (playerSelection === "rock" && computerSelection === "rock") {
-        alert("DRAW!");
+        return("DRAW!");
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        alert("You win. Paper beats Rock.");
+        return("You win. Paper beats Rock.");
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        alert("You lose. Scissors beats Paper.");
+        return("You lose. Scissors beats Paper.");
     } 
     else if (playerSelection === "paper" && computerSelection === "paper") {
-        alert("DRAW!");
+        return("DRAW!");
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
-        alert("You win. Scissors beats paper.");
+        return("You win. Scissors beats paper.");
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        alert("You lose. Rock beats Scissors.");
+        return("You lose. Rock beats Scissors.");
     }
     else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        alert("DRAW!");
+        return("DRAW!");
     }
-    else { alert("Enter a valid choice!");}
+    else { return("Enter a valid choice!");}
 }
 
 // Run a Round
 
 console.log(playRound(playerSelection, computerSelection));
+
+
+// Game Function (5 rounds)
+
+
