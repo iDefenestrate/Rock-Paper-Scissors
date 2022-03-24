@@ -9,8 +9,8 @@ const computerSelection = computerPlay();
 
 
 // player choice
-const playerSelection = prompt("Rock, Paper, or Scissors?")
-
+const playerPrompt = prompt("Rock, Paper, or Scissors?")
+const playerSelection = playerPrompt.toLocaleLowerCase();
 
 // Function for One Round of Play
 function playRound (playerSelection, computerSelection) {
