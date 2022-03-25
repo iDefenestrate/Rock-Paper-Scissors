@@ -6,7 +6,6 @@ function computerPlay() {
 }
 
 // player choice
-
 function userPlay() {
     const playerPrompt = prompt("Rock, Paper, or Scissors?");
     const playerInput = playerPrompt.toLocaleLowerCase();
@@ -14,13 +13,13 @@ function userPlay() {
 }
 
 
-
-// Function for One Round of Play
+// function for one round of play
 function playRound() {
 
 
     const playerSelection = userPlay();
     const computerSelection = computerPlay();
+
 
     if (playerSelection === "rock" && computerSelection === "paper") {
         return("You lose. Paper beats Rock.");
@@ -53,11 +52,16 @@ function playRound() {
     
 }
 
-
+//function to run one round of play
 function game() {
+    
     console.log(playRound());
+
+
 }
 
+
+//for loop to run 5 rounds of play
 for (let i = 0; i < 5; i++) {
    console.log(game())
 }
