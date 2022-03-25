@@ -7,15 +7,13 @@ function computerPlay() {
 
 // player choice
 function userPlay() {
-    const playerPrompt = prompt("Rock, Paper, or Scissors?");
-    const playerInput = playerPrompt.toLocaleLowerCase();
-    return playerInput;
+    const playerSelection = prompt("Rock, Paper, or Scissors?");
+    return playerSelection.toLowerCase();
 }
 
 
 // function for one round of play
 function playRound() {
-
 
     const playerSelection = userPlay();
     const computerSelection = computerPlay();
