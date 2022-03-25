@@ -5,15 +5,23 @@ function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
 }
 
-const computerSelection = computerPlay();
-
-
 // player choice
-const playerPrompt = prompt("Rock, Paper, or Scissors?")
-const playerSelection = playerPrompt.toLocaleLowerCase();
+
+function userPlay() {
+    const playerPrompt = prompt("Rock, Paper, or Scissors?");
+    const playerInput = playerPrompt.toLocaleLowerCase();
+    return playerInput;
+}
+
+
 
 // Function for One Round of Play
-function playRound (playerSelection, computerSelection) {
+function playRound() {
+
+
+    const playerSelection = userPlay();
+    const computerSelection = computerPlay();
+
     if (playerSelection === "rock" && computerSelection === "paper") {
         return("You lose. Paper beats Rock.");
     }
@@ -42,13 +50,22 @@ function playRound (playerSelection, computerSelection) {
         return("DRAW!");
     }
     else { return("Enter a valid choice!");}
+    
 }
 
-// Run a Round
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    console.log(playRound());
+}
+
+for (let i = 0; i < 5; i++) {
+   console.log(game())
+}
+ 
 
 
-// Game Function (5 rounds)
+
+
+
 
 
