@@ -1,6 +1,5 @@
 let options = ["rock", "paper", "scissors"]
 
-
 // computer choice
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
@@ -12,7 +11,6 @@ function userPlay() {
     return input;}
 
 
-
 // function for one round of play
 function playRound() {
 
@@ -21,10 +19,10 @@ function playRound() {
 
 
     if (playerSelection === "rock" && computerSelection === "paper") {
-        return("You lose. Paper beats Rock.");
+        return("You lose. You chose Rock, Computer chose Paper.");
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return("You win. You chose Rock, Computer chose Scissors.");
+        return("You win! You chose Rock, Computer chose Scissors.");
     }
     else if (playerSelection === "rock" && computerSelection === "rock") {
         return("It's a tie! You and Computer both chose Rock!");
@@ -33,7 +31,7 @@ function playRound() {
         return("You win! You chose Paper, Computer chose Rock.");
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return("You lose. You chose Scissors, Computer chose Paper.");
+        return("You lose. You chose Paper, Computer chose Scissors.");
     } 
     else if (playerSelection === "paper" && computerSelection === "paper") {
         return("It's a tie! You and Computer both chose Paper!");
@@ -42,7 +40,7 @@ function playRound() {
         return("You win! You chose Scissors, Computer chose paper.");
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return("You lose. You chose Rock, Computer chose Scissors.");
+        return("You lose. You chose Scissors, Computer chose Rock.");
     }
     else if (playerSelection === "scissors" && computerSelection === "scissors") {
         return("It's a tie! You and Computer both chose Scissors!");
@@ -56,7 +54,7 @@ function game() {
     
     console.log(playRound());
 
-
+     
 }
 
 
