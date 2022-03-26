@@ -1,15 +1,16 @@
+let options = ["rock", "paper", "scissors"]
+
 
 // computer choice
 function computerPlay() {
-    let options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random() * options.length)];
 }
 
 // player choice
 function userPlay() {
-    const playerSelection = prompt("Rock, Paper, or Scissors?");
-    return playerSelection.toLowerCase();
-}
+    let input = prompt("Rock, Paper, or Scissors?");
+    return input;}
+
 
 
 // function for one round of play
@@ -23,28 +24,28 @@ function playRound() {
         return("You lose. Paper beats Rock.");
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return("You win. Rock beats Scissors.");
+        return("You win. You chose Rock, Computer chose Scissors.");
     }
     else if (playerSelection === "rock" && computerSelection === "rock") {
-        return("DRAW!");
+        return("It's a tie! You and Computer both chose Rock!");
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        return("You win. Paper beats Rock.");
+        return("You win! You chose Paper, Computer chose Rock.");
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return("You lose. Scissors beats Paper.");
+        return("You lose. You chose Scissors, Computer chose Paper.");
     } 
     else if (playerSelection === "paper" && computerSelection === "paper") {
-        return("DRAW!");
+        return("It's a tie! You and Computer both chose Paper!");
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return("You win. Scissors beats paper.");
+        return("You win! You chose Scissors, Computer chose paper.");
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return("You lose. Rock beats Scissors.");
+        return("You lose. You chose Rock, Computer chose Scissors.");
     }
     else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        return("DRAW!");
+        return("It's a tie! You and Computer both chose Scissors!");
     }
     else { return("Enter a valid choice!");}
     
@@ -61,7 +62,7 @@ function game() {
 
 //for loop to run 5 rounds of play
 for (let i = 0; i < 5; i++) {
-   console.log(game())
+    console.log(game())
 }
  
 
