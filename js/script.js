@@ -12,7 +12,29 @@ function playRound() {
 
     const playerSelection = userPlay();
     const computerSelection = computerPlay();
+    const product = outcome(playerSelection, computerSelection);
+    console.log(product);
 
+}
+
+//outcomes
+function outcome(playerMove, computerMove) {
+
+    if (playerMove === computerMove) {
+        return "tie";
+    } else if (playerMove === "rock" && computerMove === "scissors") {
+        return "Player wins. Rock beats Scissors."
+    } else if (playerMove === "paper" && computerMove === "rock") {
+        return "Player wins. Paper beats Rock."
+    } else if (playerMove === "scissors" && computerMove === "paper") {
+        return "Player wins. Scissors beats Paper."
+    }  else if  (playerMove === "rock" && computerMove === "paper") {
+        return "Player loses. Paper beats Rock."
+    } else if (playerMove === "paper" && computerMove === "scissors") {
+        return "Player loses. Scissors beats Paper."
+    } else if (playerMove === "scissors" && computerMove === "rock") {
+        return "Player loses. Rock beats Scissors."
+    }
 }
 
 
@@ -37,7 +59,7 @@ function userPlay() {
         input = input.toLowerCase(); 
         check = validateInput(input);
 }
-console.log(input);
+return(input);
 }
 
 //function to validate input (make sure player is inputting one of the 3 options: rock, paper, or scissors
@@ -52,7 +74,9 @@ function validateInput(choice) {
 
 
 //run game
-game()
+for (let i = 0; i < 5; i++) {
+    game();
+}
 
 /*
 //for loop to run 5 rounds of play
