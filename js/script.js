@@ -1,14 +1,10 @@
-let options = ["rock", "paper", "scissors"]
+const moves = ["rock", "paper", "scissors"]
 
-// computer choice
-function computerPlay() {
-    return options[Math.floor(Math.random() * options.length)];
+
+//function to run game
+function game() {
+    playRound();
 }
-
-// player choice
-function userPlay() {
-    let input = prompt("Rock, Paper, or Scissors?");
-    return input;}
 
 
 // function for one round of play
@@ -17,53 +13,53 @@ function playRound() {
     const playerSelection = userPlay();
     const computerSelection = computerPlay();
 
-
-    if (playerSelection === "rock" && computerSelection === "paper") {
-        return("You lose. You chose Rock, Computer chose Paper.");
-    }
-    else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return("You win! You chose Rock, Computer chose Scissors.");
-    }
-    else if (playerSelection === "rock" && computerSelection === "rock") {
-        return("It's a tie! You and Computer both chose Rock!");
-    }
-    else if (playerSelection === "paper" && computerSelection === "rock") {
-        return("You win! You chose Paper, Computer chose Rock.");
-    }
-    else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return("You lose. You chose Paper, Computer chose Scissors.");
-    } 
-    else if (playerSelection === "paper" && computerSelection === "paper") {
-        return("It's a tie! You and Computer both chose Paper!");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return("You win! You chose Scissors, Computer chose paper.");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return("You lose. You chose Scissors, Computer chose Rock.");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        return("It's a tie! You and Computer both chose Scissors!");
-    }
-    else { return("Enter a valid choice!");}
-    
-}
-
-//function to run one round of play
-function game() {
-    
-    console.log(playRound());
-
-     
 }
 
 
+// computer choice
+function computerPlay() {
+    return moves[Math.floor(Math.random() * moves.length)];
+}
+
+// player choice
+function userPlay() {
+    let input = prompt("Rock, Paper, or Scissors?");
+    while (input == null) {
+        return;
+    }
+    input = input.toLowerCase(); 
+    let check = validateInput(input);
+    while (check == false) {
+        input = prompt("Choose Rock, Paper, or Scissors. Make sure to spell correctly!");
+        while (input == null) {
+            return;
+        }
+        input = input.toLowerCase(); 
+        check = validateInput(input);
+}
+console.log(input);
+}
+
+//function to validate input (make sure player is inputting one of the 3 options: rock, paper, or scissors
+function validateInput(choice) {
+    if (moves.includes(choice)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+//run game
+game()
+
+/*
 //for loop to run 5 rounds of play
 for (let i = 0; i < 5; i++) {
     console.log(game())
 }
- 
-
+ */
 
 
 
