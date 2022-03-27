@@ -1,47 +1,50 @@
 const moves = ["rock", "paper", "scissors"]
 
 
-
-
 // function for one round of play
 function playRound(playerSelection, computerSelection){
 
 
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            console.log("Tie game! Player and Computer both chose ROCK.");
+            return "Tie game! Player and Computer both chose ROCK.";
         }
         else if (computerSelection === "scissors") {
-            console.log("Player wins! Player chose ROCK, Computer chose SCISSORS.");
             playerScore++;
+            return "Player wins! Player chose ROCK, Computer chose SCISSORS.";
+            
         }
         else {
-            console.log("Player loses. Player chose ROCK, Computer chose PAPER.");
             computerScore++;
+            return"Player loses. Player chose ROCK, Computer chose PAPER.";
         }
     }
     if (playerSelection === "paper") {
         if (computerSelection === "paper") {
-            console.log("Tie game! Player and Computer both chose PAPER.");
+            return "Tie game! Player and Computer both chose PAPER.";
         } else if (computerSelection === "rock") {
-            console.log("Player wins! Player chose PAPER, Computer chose ROCK.");
-            playerScore++;
+            playerScore++;;
+            return "Player wins! Player chose PAPER, Computer chose ROCK.";
+            
         } else {
-            console.log("Player loses. Player chose PAPER, Computer chose SCISSORS.");
             computerScore++;
+            return "Player loses. Player chose PAPER, Computer chose SCISSORS.";
+            
             }
         }
     if (playerSelection === "scissors")
         if (computerSelection === "scissors") {
-            console.log("Tie game! Player and Computer both chose SCISSORS.");
+            return "Tie game! Player and Computer both chose SCISSORS.";
         }
         else if (computerSelection === "paper") {
-            console.log("Player wins! Player chose SCISSORS, Computer chose PAPER.");
-            playerScore++;
+            playerScore++;;
+           return "Player wins! Player chose SCISSORS, Computer chose PAPER.";
+            
         }
         else {
-            console.log("Player loses. Player chose SCISSORS, Computer chose ROCK.");
             computerScore++;
+            return "Player loses. Player chose SCISSORS, Computer chose ROCK.";
+            
         }
     }
 
@@ -60,8 +63,8 @@ function game() {
 }
 
 //score 
-let playerScore = parseInt(0);
-let computerScore = parseInt(0);
+playerScore = parseInt(0);
+computerScore = parseInt(0);
 
 
 // computer choice
